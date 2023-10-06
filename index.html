@@ -35,7 +35,28 @@
         <img src="assets/images/image4.png" alt="" class="full-width" />
         <div class="row">
           <img src="assets/images/image5.png" alt="" class="half-width" />
-          <img src="assets/images/image6.png" alt="" class="half-width" />
+          <div class="video-container">
+            <a href="https://vimeo.com/770011738" target="_blank">
+              <video
+                class="half-width"
+                src="assets/videos/video1.mp4"
+                preload="auto"
+                muted></video>
+
+              <script>
+                var video = document.querySelector("video");
+
+                video.addEventListener("mouseenter", function () {
+                  video.play();
+                });
+
+                video.addEventListener("mouseleave", function () {
+                  video.currentTime = 0;
+                  video.pause();
+                });
+              </script>
+            </a>
+          </div>
         </div>
       </div>
     </div>

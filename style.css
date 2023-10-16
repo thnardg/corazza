@@ -66,7 +66,7 @@ a:hover {
 
 .hero-image img.logo {
   position: relative;
-  max-width: 50%;
+  max-width: 20%;
 }
 
 .content {
@@ -84,16 +84,16 @@ a:hover {
 .content p {
   font-size: 1em;
 }
-
 .gallery {
-  padding: 2em;
+  padding: 10em;
 }
 
 .gallery .full-width {
-  width: 100%;
+  width: 70%; /* reduce this to make the video smaller */
   height: auto;
   object-fit: cover;
   padding-top: 0.5em;
+  margin: auto; /* center the video */
 }
 
 .gallery .row {
@@ -102,17 +102,35 @@ a:hover {
 }
 
 .gallery .half-width {
-  width: 50%;
+  width: 15%; /* reduce this to make the video smaller */
 }
 
-.gallery .row .video-container {
+.gallery .row {
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.gallery .row video {
+  width: 100%;
+  height: auto; /* change this to auto */
   object-fit: cover;
 }
 
-.gallery .row .video-container video {
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video {
+  flex: 1 0 300px;
+  margin: 5px;
+}
+
+video {
   width: 100%;
+  height: auto;
+  object-fit: cover;
 }

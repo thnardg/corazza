@@ -2,14 +2,18 @@
 <html>
   <head>
     <link href="style.css" rel="stylesheet" />
-    <script src="app.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    <script src="spript.js" defer></script>
   </head>
   <body>
     <div class="App">
       <div class="hero-image">
         <img src="assets/images/hero.png" alt="Hero" class="hero" />
-        <img src="assets/logo/LOGOCORAZZA.png" alt="Logo" class="logo" />
+        <img src="assets/logo/LOGO VICTOR.png" alt="Logo" class="logo" />
       </div>
+
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -17,6 +21,7 @@
           <li><a href="/">Contact</a></li>
         </ul>
       </nav>
+
       <div class="content">
         <h1>CORAZZA</h1>
         <p>
@@ -26,39 +31,39 @@
         </p>
       </div>
 
+      <div id="videoGallery" class="container"></div>
       <div class="gallery">
-        <img src="assets/images/image1.png" alt="" class="full-width" />
-        <div class="row">
-          <img src="assets/images/image2.png" alt="" class="half-width" />
-          <img src="assets/images/image3.png" alt="" class="half-width" />
-        </div>
-        <img src="assets/images/image4.png" alt="" class="full-width" />
-        <div class="row">
-          <img src="assets/images/image5.png" alt="" class="half-width" />
-          <div class="video-container">
-            <a href="https://vimeo.com/770011738" target="_blank">
-              <video
-                class="half-width"
-                src="assets/videos/video1.mp4"
-                preload="auto"
-                muted></video>
-
-              <script>
-                var video = document.querySelector("video");
-
-                video.addEventListener("mouseenter", function () {
-                  video.play();
-                });
-
-                video.addEventListener("mouseleave", function () {
-                  video.currentTime = 0;
-                  video.pause();
-                });
-              </script>
-            </a>
-          </div>
-        </div>
+        <div class="full-row"></div>
+        <div class="row"></div>
+        <div class="full-row"></div>
       </div>
+
+      <div class="home__social">
+        <a
+          href="mailto:ve.corazza@gmail.com"
+          target="_blank"
+          class="home__social-link"
+          ><i class="ri-mail-fill"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/victorcorazza/"
+          target="_blank"
+          class="home__social-link"
+          ><i class="ri-instagram-fill"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/victorcorazza/"
+          target="_blank"
+          class="home__social-link"
+          ><i class="ri-linkedin-fill"></i
+        ></a>
+      </div>
+    </div>
+
+    <div class="footer__rights">
+      <p class="footer__copy">
+        &#169; 2023 Victor Corazza. Todos os direitos reservados.
+      </p>
     </div>
   </body>
 </html>

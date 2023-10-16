@@ -84,39 +84,6 @@ a:hover {
 .content p {
   font-size: 1em;
 }
-.gallery {
-  padding: 10em;
-}
-
-.gallery .full-width {
-  width: 70%; /* reduce this to make the video smaller */
-  height: auto;
-  object-fit: cover;
-  padding-top: 0.5em;
-  margin: auto; /* center the video */
-}
-
-.gallery .row {
-  display: flex;
-  padding-top: 0.5em;
-}
-
-.gallery .half-width {
-  width: 15%; /* reduce this to make the video smaller */
-}
-
-.gallery .row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.gallery .row video {
-  width: 100%;
-  height: auto; /* change this to auto */
-  object-fit: cover;
-}
 
 .container {
   display: flex;
@@ -124,13 +91,12 @@ a:hover {
   justify-content: center;
 }
 
-.video {
-  flex: 1 0 300px;
-  margin: 5px;
+.home__social-link {
+  padding: 0.2em;
 }
 
-video {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.footer__rights {
+  padding-top: 5em;
+  padding-left: 2em;
+  padding-bottom: 1em;
 }

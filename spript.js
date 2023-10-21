@@ -40,14 +40,31 @@ var allVideos = [
   allComercialVideos,
 ];
 
-// Function to create a new video element
 function createVideo(src) {
   var video = document.createElement("video");
   video.src = src;
-  video.controls = true;
+  video.controls = false; // Hide player button and progress bar
+  video.muted = true; // Mute the video
+  video.addEventListener("loadedmetadata", function () {
+    if (this.videoWidth > this.videoHeight) {
+      this.parentElement.className = "video landscape";
+    } else {
+      this.parentElement.className = "video portrait";
+    }
+  });
+
+  // Autoplay on mouse hover
+  video.addEventListener("mouseover", function () {
+    video.play();
+  });
+
+  // Pause when mouse is not hovering
+  video.addEventListener("mouseout", function () {
+    video.pause();
+    video.currentTime = 0;
+  });
 
   var div = document.createElement("div");
-  div.className = "video";
   div.appendChild(video);
 
   return div;

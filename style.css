@@ -22,7 +22,7 @@ p {
   line-height: 1.5;
 }
 
-nav ul {
+#nav ul {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
@@ -31,13 +31,13 @@ nav ul {
   text-transform: uppercase;
 }
 
-nav ul li {
+#nav ul li {
   margin-left: 20px;
 }
 
 a {
   color: #fff;
-  font-weight: 300;
+  font-weight: 600;
   font-family: "Syne", sans-serif;
   text-decoration: none;
 }
@@ -73,6 +73,7 @@ a:hover {
   text-align: left;
   max-width: 50%;
   margin-left: 2em;
+  padding-bottom: 2em;
 }
 
 .content h1 {
@@ -99,4 +100,9 @@ a:hover {
   padding-top: 5em;
   padding-left: 2em;
   padding-bottom: 1em;
+}
+
+.video video {
+  width: 100%; /* Adjust as needed */
+  height: auto;
 }

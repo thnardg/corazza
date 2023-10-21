@@ -43,8 +43,8 @@ var allVideos = [
 function createVideo(src) {
   var video = document.createElement("video");
   video.src = src;
-  video.controls = false; // Hide player button and progress bar
-  video.muted = true; // Mute the video
+  video.controls = false;
+  video.muted = true;
   video.addEventListener("loadedmetadata", function () {
     if (this.videoWidth > this.videoHeight) {
       this.parentElement.className = "video landscape";

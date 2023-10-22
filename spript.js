@@ -1,7 +1,7 @@
 // NAVIGATION BAR
 let nav = document.getElementById("nav");
 let ul = document.createElement("ul");
-let listItems = ["Home", "About", "Contact"];
+let listItems = ["Home", "About", "Works", "Contact"];
 
 for (let i = 0; i < listItems.length; i++) {
   let li = document.createElement("li");

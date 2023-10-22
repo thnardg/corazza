@@ -23,9 +23,18 @@ function generateNavBar(elementId) {
   nav.appendChild(ul);
 }
 
-// Generate navigation bar for header and footer
 generateNavBar("nav");
 generateNavBar("nav-footer");
+
+const sr = ScrollReveal({
+  distance: "60px",
+  duration: 2800,
+});
+
+sr.reveal(`#home, #nav-bar, #about, #works, #contact`, {
+  origin: "top",
+  interval: 100,
+});
 
 // VIDEO GALLERY
 var allAIVideos = {
@@ -92,7 +101,7 @@ function createVideo(src, vimeoUrl) {
       video.pause();
       video.currentTime = 0;
       video.style.opacity = 1;
-    }, 1000);
+    }, 700);
   });
 
   // Open a modal with the Vimeo embed
@@ -105,7 +114,7 @@ function createVideo(src, vimeoUrl) {
 
     if (vimeoUrl === "/") {
       var message = document.createElement("p");
-      message.textContent = "Video currently not available"; // Display a message
+      message.textContent = "Video currently not available"; // Display a message for broken link
       embedContainer.appendChild(message);
     } else {
       var embed = document.createElement("iframe");

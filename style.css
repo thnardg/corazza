@@ -6,11 +6,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: #000000;
+  --text-color: #ffffff;
+}
+
 body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: "Epilogue", sans-serif;
   font-weight: 300;
-  color: #ffffff;
-  background-color: #000000;
 }
 
 h1,
@@ -42,10 +47,10 @@ p {
 }
 
 a {
-  color: #fff;
   font-weight: 600;
   font-family: "Syne", sans-serif;
   text-decoration: none;
+  color: var(--text-color);
 }
 
 a:hover {
@@ -118,11 +123,15 @@ a:hover {
   padding-bottom: 1em;
   text-align: center;
   font-size: small;
-  color: rgb(160, 160, 160);
+}
+
+.footer__rights p {
+  color: #e2e2e259;
 }
 
 .footer__rights img {
-  width: 3em;
+  width: 10%;
+  opacity: 0.4;
 }
 
 .clientsLogos {
@@ -221,4 +230,49 @@ a:hover {
   height: 80%;
   border: none;
   background-color: #0000003d;
+}
+
+@media screen and (max-width: 600px) {
+  #nav {
+    display: none;
+  }
+
+  #nav-footer {
+    width: 90%;
+    margin: auto;
+  }
+  body {
+    font-size: 90%;
+  }
+
+  h2 {
+    font-size: medium;
+  }
+  .content {
+    max-width: 100%;
+  }
+
+  .body-content,
+  .content,
+  .home__social,
+  .partners,
+  .clients,
+  .footer__rights {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .hero-image img.logo {
+    width: 70%;
+  }
+
+  .footer__rights img {
+    width: 20%;
+  }
+
+  .video.landscape,
+  .video.portrait {
+    flex-basis: 100%;
+  }
 }

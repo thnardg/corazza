@@ -10,28 +10,38 @@
 
   <body>
     <div class="App">
-      <div class="hero-image">
-        <img src="assets/images/hero.png" alt="Hero" class="hero" />
-        <img src="assets/logo/LOGO VICTOR.png" alt="Logo" class="logo" />
-      </div>
-
+      <section id="home">
+        <div class="hero-image">
+          <img src="assets/images/hero.png" alt="Hero" class="hero" />
+          <img src="assets/logo/LOGO VICTOR.png" alt="Logo" class="logo" />
+        </div>
+      </section>
       <div class="body-content">
         <div id="nav"></div>
 
+
         <div class="content">
+                  <section id="about"></section>
           <h1>CORAZZA</h1>
           <p>
             Victor Corazza is a visual artist based in Brazil. He employs AI
             tools, video editing techniques, and 3D knowledge to breathe life
             into dream-like scenarios and landscapes.
           </p>
-
+        </section>
+        <section id="contact">
           <div class="home__social">
             <a
               href="https://www.linkedin.com/in/victorcorazza/"
               target="_blank"
               class="home__social-link"
               ><i class="ri-linkedin-fill"></i
+            ></a>
+            <a
+              href="https://vimeo.com/victorcorazza"
+              target="_blank"
+              class="home__social-link"
+              ><i class="ri-vimeo-fill"></i
             ></a>
             <a
               href="https://www.instagram.com/victorcorazza/"
@@ -46,9 +56,12 @@
               <i class="ri-mail-fill"></i
             ></a>
           </div>
+          </section>
         </div>
 
-        <div id="videoGallery" class="container"></div>
+        <section id="works">
+          <div id="videoGallery" class="container"></div>
+        </section>
 
         <div class="partners">
           <h2>Certified Runway Creative Partner</h2>
@@ -69,7 +82,13 @@
         </div>
 
         <div class="footer__rights">
-          <p class="footer__copy">&#169; 2023 Victor Corazza</p>
+          <img src="assets/logo/LOGO VICTOR.png" />
+          <div
+            id="nav-footer"
+            style="display: flex; justify-content: center"></div>
+          <p class="footer__copy">
+            &#169; <span id="currentYear"></span> Victor Corazza
+          </p>
         </div>
       </div>
     </div>

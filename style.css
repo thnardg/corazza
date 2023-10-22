@@ -23,15 +23,21 @@ p {
   line-height: 1.5;
 }
 
-#nav ul {
+#nav ul,
+#nav-footer ul {
   display: flex;
   justify-content: flex-end;
   list-style-type: none;
-  padding: 1em 0 3em 0;
+  padding: 1em 0 2em 0;
   text-transform: uppercase;
 }
 
-#nav ul li {
+#nav-footer ul {
+  justify-content: center;
+}
+
+#nav ul li,
+#nav-footer ul li {
   margin-left: 1.5em;
 }
 
@@ -54,7 +60,7 @@ a:hover {
 .hero-image {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +77,9 @@ a:hover {
 
 .hero-image img.logo {
   position: relative;
-  max-width: 20%;
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
 }
 
 .body-content {
@@ -108,6 +116,13 @@ a:hover {
 .footer__rights {
   padding-top: 3em;
   padding-bottom: 1em;
+  text-align: center;
+  font-size: small;
+  color: rgb(160, 160, 160);
+}
+
+.footer__rights img {
+  width: 3em;
 }
 
 .clientsLogos {
@@ -132,9 +147,9 @@ a:hover {
 
 .partnerLogos {
   width: 100%;
-  display: flex; /* Add this line */
-  justify-content: center; /* Add this line */
-  align-items: center; /* Add this line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .partnerLogos img {

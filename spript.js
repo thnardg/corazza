@@ -1,3 +1,5 @@
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
 // NAVIGATION BAR
 let nav = document.getElementById("nav");
 let ul = document.createElement("ul");
@@ -6,7 +8,7 @@ let listItems = ["Home", "About", "Works", "Contact"];
 for (let i = 0; i < listItems.length; i++) {
   let li = document.createElement("li");
   let a = document.createElement("a");
-  a.setAttribute("href", "/");
+  a.setAttribute("href", "#" + listItems[i].toLowerCase()); // Link to section
   a.textContent = listItems[i];
   li.appendChild(a);
   ul.appendChild(li);
@@ -125,3 +127,7 @@ for (var category in allVideos) {
     container.appendChild(videoElement);
   }
 }
+
+// FOOTER
+document.getElementById("nav-footer").innerHTML =
+  document.getElementById("nav").innerHTML;

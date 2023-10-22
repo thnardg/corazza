@@ -40,9 +40,10 @@ sr.reveal(`#home, #nav-bar, #about, #works, #contact`, {
 var allPhotos = {
   "assets/images/mobile/8.png":
     "https://player.vimeo.com/video/859910013?h=61d063f865",
-  "assets/images/mobile/6.png": "/",
-  "assets/images/mobile/4.png": "/",
-  "assets/images/mobile/7.png": "/",
+  "assets/images/mobile/6.png": "https://www.youtube.com/embed/eCDQTyKjKTA",
+  "assets/images/mobile/4.png": "https://www.youtube.com/embed/u6oMLGfMSoY",
+  "assets/images/mobile/7.png":
+    "https://www.youtube.com/embed/YQnj-8tnS_E?si=oX0UGwtu1ni3qneG",
   "assets/images/mobile/1.png":
     "https://player.vimeo.com/video/770011545?h=7249150444",
   "assets/images/mobile/2.png":
@@ -57,16 +58,20 @@ var allPhotos = {
     "https://player.vimeo.com/video/727426164?h=7f2c341a7c",
   "assets/images/mobile/12.png":
     "https://player.vimeo.com/video/790509577?h=5ff4cd06ea",
-  "assets/images/mobile/13.png": "/",
+  "assets/images/mobile/13.png":
+    "https://www.youtube.com/embed/Iv33denEOys?si=cBROiExkcF5Bzd7x",
 };
 
 // VIDEO GALLERY
 var allAIVideos = {
   "assets/videos/AI/UncannyLandscapesTrim.mp4":
     "https://player.vimeo.com/video/859910013?h=61d063f865",
-  "assets/videos/AI/ThrivingPondTrim.mp4": "/",
-  "assets/videos/AI/FungalTexturesTrim.mp4": "/",
-  "assets/videos/AI/SilentPortrayalsTrim.mp4": "/",
+  "assets/videos/AI/ThrivingPondTrim.mp4":
+    "https://www.youtube.com/embed/eCDQTyKjKTA",
+  "assets/videos/AI/FungalTexturesTrim.mp4":
+    "https://www.youtube.com/embed/u6oMLGfMSoY",
+  "assets/videos/AI/SilentPortrayalsTrim.mp4":
+    "https://www.youtube.com/embed/YQnj-8tnS_E?si=oX0UGwtu1ni3qneG",
 };
 
 var all3DVideos = {
@@ -90,7 +95,8 @@ var allComercialVideos = {
     "https://player.vimeo.com/video/727426164?h=7f2c341a7c",
   "assets/videos/COMERCIAL/JulioOkuboCampanhaMãesTrim.mp4":
     "https://player.vimeo.com/video/790509577?h=5ff4cd06ea",
-  "assets/videos/COMERCIAL/NaturaxÁrvoreShowReelTrim.mp4": "/",
+  "assets/videos/COMERCIAL/NaturaxÁrvoreShowReelTrim.mp4":
+    "https://www.youtube.com/embed/Iv33denEOys?si=cBROiExkcF5Bzd7x",
 };
 
 var allVideos = [

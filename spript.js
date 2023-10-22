@@ -104,6 +104,14 @@ function createVideo(src, vimeoUrl) {
     }, 700);
   });
 
+  // Detect if the user is on a mobile device
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    video.pause();
+    video.currentTime = "0";
+    video.controls = false;
+  }
+
   // Open a modal with the Vimeo embed
   video.addEventListener("click", function () {
     var modal = document.createElement("div");

@@ -1,19 +1,31 @@
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
 // NAVIGATION BAR
-let nav = document.getElementById("nav");
-let ul = document.createElement("ul");
-let listItems = ["Home", "About", "Works", "Contact"];
+function generateNavBar(elementId) {
+  let nav = document.getElementById(elementId);
+  let ul = document.createElement("ul");
+  let listItems = ["Home", "About", "Works", "Contact"];
 
-for (let i = 0; i < listItems.length; i++) {
-  let li = document.createElement("li");
-  let a = document.createElement("a");
-  a.setAttribute("href", "#" + listItems[i].toLowerCase()); // Link to section
-  a.textContent = listItems[i];
-  li.appendChild(a);
-  ul.appendChild(li);
+  for (let i = 0; i < listItems.length; i++) {
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+    a.textContent = listItems[i];
+
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      let section = document.getElementById(listItems[i].toLowerCase());
+      section.scrollIntoView({ behavior: "smooth" });
+    });
+
+    li.appendChild(a);
+    ul.appendChild(li);
+  }
+  nav.appendChild(ul);
 }
-nav.appendChild(ul);
+
+// Generate navigation bar for header and footer
+generateNavBar("nav");
+generateNavBar("nav-footer");
 
 // VIDEO GALLERY
 var allAIVideos = {
@@ -127,7 +139,3 @@ for (var category in allVideos) {
     container.appendChild(videoElement);
   }
 }
-
-// FOOTER
-document.getElementById("nav-footer").innerHTML =
-  document.getElementById("nav").innerHTML;

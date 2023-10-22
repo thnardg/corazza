@@ -232,15 +232,32 @@ a:hover {
   background-color: #0000003d;
 }
 
+#imageGallery {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   #nav {
     display: none;
+  }
+
+  #videoGallery {
+    display: none;
+  }
+
+  #imageGallery {
+    display: block;
+  }
+
+  .container img {
+    width: 100%;
   }
 
   #nav-footer {
     width: 90%;
     margin: auto;
   }
+
   body {
     font-size: 90%;
   }
@@ -248,6 +265,7 @@ a:hover {
   h2 {
     font-size: medium;
   }
+
   .content {
     max-width: 100%;
   }

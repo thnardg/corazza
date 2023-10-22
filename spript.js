@@ -36,6 +36,30 @@ sr.reveal(`#home, #nav-bar, #about, #works, #contact`, {
   interval: 100,
 });
 
+// PHOTO GALLERY
+var allPhotos = {
+  "assets/images/mobile/8.png":
+    "https://player.vimeo.com/video/859910013?h=61d063f865",
+  "assets/images/mobile/6.png": "/",
+  "assets/images/mobile/4.png": "/",
+  "assets/images/mobile/7.png": "/",
+  "assets/images/mobile/1.png":
+    "https://player.vimeo.com/video/770011545?h=7249150444",
+  "assets/images/mobile/2.png":
+    "https://player.vimeo.com/video/770011738?h=ef80a1b7d0",
+  "assets/images/mobile/3.png":
+    "https://player.vimeo.com/video/770011127?h=3278f5c2f8",
+  "assets/images/mobile/9.png":
+    "https://player.vimeo.com/video/731179431?h=9b87222ada",
+  "assets/images/mobile/10.png":
+    "https://player.vimeo.com/video/656586224?h=3af300f78c",
+  "assets/images/mobile/11.png":
+    "https://player.vimeo.com/video/727426164?h=7f2c341a7c",
+  "assets/images/mobile/12.png":
+    "https://player.vimeo.com/video/790509577?h=5ff4cd06ea",
+  "assets/images/mobile/13.png": "/",
+};
+
 // VIDEO GALLERY
 var allAIVideos = {
   "assets/videos/AI/UncannyLandscapesTrim.mp4":
@@ -147,4 +171,52 @@ for (var category in allVideos) {
     var videoElement = createVideo(src, allVideos[category][src]);
     container.appendChild(videoElement);
   }
+}
+
+function createImage(src, vimeoUrl) {
+  var img = document.createElement("img");
+  img.src = src;
+  img.style.opacity = 1;
+
+  // Open a modal with the Vimeo embed
+  img.addEventListener("click", function () {
+    var modal = document.createElement("div");
+    modal.className = "modal";
+
+    var embedContainer = document.createElement("div");
+    embedContainer.className = "embed-container";
+
+    if (vimeoUrl === "/") {
+      var message = document.createElement("p");
+      message.textContent = "Video currently not available"; // Display a message for broken link
+      embedContainer.appendChild(message);
+    } else {
+      var embed = document.createElement("iframe");
+      embed.src = vimeoUrl;
+      embed.frameborder = "0";
+      embed.allowfullscreen = "";
+      embedContainer.appendChild(embed);
+    }
+
+    modal.appendChild(embedContainer);
+
+    document.body.appendChild(modal);
+
+    embedContainer.onclick = function (event) {
+      if (event.target == embedContainer) {
+        document.body.removeChild(modal);
+      }
+    };
+  });
+
+  var div = document.createElement("div");
+  div.appendChild(img);
+
+  return div;
+}
+
+var container = document.getElementById("imageGallery");
+for (var src in allPhotos) {
+  var imageElement = createImage(src, allPhotos[src]);
+  container.appendChild(imageElement);
 }

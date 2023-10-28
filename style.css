@@ -28,7 +28,7 @@ p {
   line-height: 1.5;
 }
 
-#nav ul,
+#social-nav,
 #nav-footer ul {
   display: flex;
   justify-content: flex-end;
@@ -41,11 +41,12 @@ p {
   justify-content: center;
 }
 
-#nav ul li,
+#social-nav,
 #nav-footer ul li {
   margin-left: 1.5em;
 }
 
+#social-nav a,
 #social-footer a {
   font-size: large;
   padding: 0.5rem;

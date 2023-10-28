@@ -1,5 +1,6 @@
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
+// SOCIAL MEDIA ICONS
 function generateSocialLinks(elementId) {
   let container = document.getElementById(elementId);
   let div = document.createElement("div");
@@ -33,9 +34,6 @@ function generateSocialLinks(elementId) {
 
   container.appendChild(div);
 }
-generateSocialLinks("social");
-
-generateSocialLinks("social-footer");
 
 // NAVIGATION BAR
 function generateNavBar(elementId) {
@@ -60,8 +58,10 @@ function generateNavBar(elementId) {
   nav.appendChild(ul);
 }
 
-generateNavBar("nav");
 generateNavBar("nav-footer");
+generateSocialLinks("social");
+generateSocialLinks("social-nav");
+generateSocialLinks("social-footer");
 
 const sr = ScrollReveal({
   distance: "60px",
@@ -74,7 +74,7 @@ sr.reveal(`#home, #nav-bar, #about, #works, #contact`, {
 });
 
 // VIDEO GALLERY
-// Endereço dos vídeos e link pro embed
+// *** Endereço dos vídeos e link pro embed ***
 var allVideos = {
   "assets/videos/AI/UncannyLandscapesTrim.mp4":
     "https://player.vimeo.com/video/859910013?h=61d063f865",
@@ -98,6 +98,7 @@ var allVideos = {
     "https://player.vimeo.com/video/656586224?h=3af300f78c",
   "assets/videos/COMERCIAL/EnodiaAtelierTrim.mp4#t=4":
     "https://player.vimeo.com/video/727426164?h=7f2c341a7c",
+  //*** #t=0 ao final pra determinar o frame do vídeo que vai ser a thumb ***
   "assets/videos/COMERCIAL/JulioOkuboCampanhaMãesTrim.mp4#t=2":
     "https://player.vimeo.com/video/790509577?h=5ff4cd06ea",
   "assets/videos/COMERCIAL/NaturaxÁrvoreShowReelTrim.mp4#t=4":
@@ -111,6 +112,9 @@ function createVideo(src, vimeoUrl) {
   video.muted = true;
   video.loop = true;
   video.style.opacity = 1;
+
+  var initialTime = src.includes("#t=") ? parseFloat(src.split("#t=")[1]) : 0;
+
   video.addEventListener("loadedmetadata", function () {
     if (this.videoWidth > this.videoHeight) {
       this.parentElement.className = "video landscape";
@@ -128,7 +132,7 @@ function createVideo(src, vimeoUrl) {
     video.style.opacity = 0;
     setTimeout(function () {
       video.pause();
-      video.currentTime = 0;
+      video.currentTime = initialTime;
       video.style.opacity = 1;
     }, 700);
   });
@@ -144,12 +148,9 @@ function createVideo(src, vimeoUrl) {
     // Create a close button
     var closeButton = document.createElement("button");
     closeButton.className = "close-button";
-
-    // Add an SVG icon to the button
     closeButton.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
 
-    // Add an event listener to the close button
     closeButton.addEventListener("click", function () {
       document.body.removeChild(modal);
     });
@@ -192,7 +193,7 @@ for (var src in allVideos) {
 }
 
 // PHOTO GALLERY
-// Endereço das fotos e link pro embed
+// *** Endereço das fotos e link pro embed ***
 var allPhotos = {
   "assets/images/mobile/8.png":
     "https://player.vimeo.com/video/859910013?h=61d063f865",
@@ -234,15 +235,12 @@ function createImage(src, vimeoUrl) {
     var embedContainer = document.createElement("div");
     embedContainer.className = "embed-container";
 
-    // Create a close button
     var closeButton = document.createElement("button");
     closeButton.className = "close-button";
 
-    // Add an SVG icon to the button
     closeButton.innerHTML =
       '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
 
-    // Add an event listener to the close button
     closeButton.addEventListener("click", function () {
       document.body.removeChild(modal);
     });
@@ -259,9 +257,7 @@ function createImage(src, vimeoUrl) {
       embedContainer.appendChild(embed);
     }
 
-    // Append the close button to the modal
     modal.appendChild(closeButton);
-
     modal.appendChild(embedContainer);
     document.body.appendChild(modal);
 

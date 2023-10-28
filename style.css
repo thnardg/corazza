@@ -46,6 +46,12 @@ p {
   margin-left: 1.5em;
 }
 
+#social-footer a {
+  font-size: large;
+  padding: 0.5rem;
+  opacity: 70%;
+}
+
 a {
   font-weight: 600;
   font-family: "Syne", sans-serif;
@@ -141,6 +147,7 @@ a:hover {
 .footer__rights img {
   width: 10%;
   opacity: 0.4;
+  padding-bottom: 1rem;
 }
 
 .clientsLogos {

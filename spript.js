@@ -1,5 +1,42 @@
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
+function generateSocialLinks(elementId) {
+  let container = document.getElementById(elementId);
+  let div = document.createElement("div");
+  div.className = "home__social";
+
+  let socialLinks = [
+    {
+      href: "https://www.linkedin.com/in/victorcorazza/",
+      icon: "ri-linkedin-fill",
+    },
+    { href: "https://vimeo.com/victorcorazza", icon: "ri-vimeo-fill" },
+    {
+      href: "https://www.instagram.com/victorcorazza/",
+      icon: "ri-instagram-fill",
+    },
+    { href: "mailto:ve.corazza@gmail.com", icon: "ri-mail-fill" },
+  ];
+
+  for (let i = 0; i < socialLinks.length; i++) {
+    let a = document.createElement("a");
+    a.href = socialLinks[i].href;
+    a.target = "_blank";
+    a.className = "home__social-link";
+
+    let iElement = document.createElement("i");
+    iElement.className = socialLinks[i].icon;
+
+    a.appendChild(iElement);
+    div.appendChild(a);
+  }
+
+  container.appendChild(div);
+}
+generateSocialLinks("social");
+
+generateSocialLinks("social-footer");
+
 // NAVIGATION BAR
 function generateNavBar(elementId) {
   let nav = document.getElementById(elementId);

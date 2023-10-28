@@ -55,15 +55,15 @@ var allVideos = {
     "https://player.vimeo.com/video/770011738?h=ef80a1b7d0",
   "assets/videos/3D/3DWANDERER.mp4":
     "https://player.vimeo.com/video/770011127?h=3278f5c2f8",
-  "assets/videos/AUTORAIS/SobaLenteTrim.mp4":
+  "assets/videos/AUTORAIS/SobaLenteTrim.mp4#t=3.5":
     "https://player.vimeo.com/video/731179431?h=9b87222ada",
-  "assets/videos/COMERCIAL/AmazoniaemEXAMEIGTVTrim.mp4":
+  "assets/videos/COMERCIAL/AmazoniaemEXAMEIGTVTrim.mp4#t=2":
     "https://player.vimeo.com/video/656586224?h=3af300f78c",
-  "assets/videos/COMERCIAL/EnodiaAtelierTrim.mp4":
+  "assets/videos/COMERCIAL/EnodiaAtelierTrim.mp4#t=4":
     "https://player.vimeo.com/video/727426164?h=7f2c341a7c",
-  "assets/videos/COMERCIAL/JulioOkuboCampanhaMãesTrim.mp4":
+  "assets/videos/COMERCIAL/JulioOkuboCampanhaMãesTrim.mp4#t=2":
     "https://player.vimeo.com/video/790509577?h=5ff4cd06ea",
-  "assets/videos/COMERCIAL/NaturaxÁrvoreShowReelTrim.mp4":
+  "assets/videos/COMERCIAL/NaturaxÁrvoreShowReelTrim.mp4#t=4":
     "https://www.youtube.com/embed/Iv33denEOys?si=cBROiExkcF5Bzd7x",
 };
 
@@ -104,6 +104,19 @@ function createVideo(src, vimeoUrl) {
     var embedContainer = document.createElement("div");
     embedContainer.className = "embed-container";
 
+    // Create a close button
+    var closeButton = document.createElement("button");
+    closeButton.className = "close-button";
+
+    // Add an SVG icon to the button
+    closeButton.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+    // Add an event listener to the close button
+    closeButton.addEventListener("click", function () {
+      document.body.removeChild(modal);
+    });
+
     if (vimeoUrl === "/") {
       var message = document.createElement("p");
       message.textContent = "Video currently not available"; // Display a message for broken link
@@ -116,8 +129,13 @@ function createVideo(src, vimeoUrl) {
       embedContainer.appendChild(embed);
     }
 
+    // Append the close button to the modal
+    modal.appendChild(closeButton);
+
     modal.appendChild(embedContainer);
     document.body.appendChild(modal);
+
+    // Close the modal when clicking outside the iframe
     embedContainer.onclick = function (event) {
       if (event.target == embedContainer) {
         document.body.removeChild(modal);
@@ -179,6 +197,19 @@ function createImage(src, vimeoUrl) {
     var embedContainer = document.createElement("div");
     embedContainer.className = "embed-container";
 
+    // Create a close button
+    var closeButton = document.createElement("button");
+    closeButton.className = "close-button";
+
+    // Add an SVG icon to the button
+    closeButton.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+    // Add an event listener to the close button
+    closeButton.addEventListener("click", function () {
+      document.body.removeChild(modal);
+    });
+
     if (vimeoUrl === "/") {
       var message = document.createElement("p");
       message.textContent = "Video currently not available"; // Display a message for broken link
@@ -191,10 +222,13 @@ function createImage(src, vimeoUrl) {
       embedContainer.appendChild(embed);
     }
 
-    modal.appendChild(embedContainer);
+    // Append the close button to the modal
+    modal.appendChild(closeButton);
 
+    modal.appendChild(embedContainer);
     document.body.appendChild(modal);
 
+    // Close the modal when clicking outside the iframe
     embedContainer.onclick = function (event) {
       if (event.target == embedContainer) {
         document.body.removeChild(modal);
